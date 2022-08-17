@@ -3,6 +3,9 @@ package com.redis.om.autocomplete.domain;
 import org.springframework.data.annotation.Id;
 
 import com.redis.om.spring.annotations.Document;
+import com.redis.om.spring.annotations.AutoComplete;
+import com.redis.om.spring.annotations.AutoCompletePayload;
+
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,10 +19,10 @@ import lombok.RequiredArgsConstructor;
 public class Airport {
   @Id
   private String id;
-  @NonNull
+  @AutoComplete @NonNull
   private String name;
-  @NonNull
+  @AutoCompletePayload("name") @NonNull
   private String code;
-  @NonNull
+  @AutoCompletePayload("name") @NonNull
   private String state;
 }
