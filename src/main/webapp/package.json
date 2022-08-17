@@ -1,0 +1,46 @@
+{
+  "name": "react-om-autocomplete",
+  "version": "1.0.0",
+  "description": "React Frontend for Redis OM Spring Autocomplete Demo",
+  "main": "app.js",
+  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:redis-developer/redis-om-autocomplete-demo.git"
+  },
+  "keywords": [
+    "redis",
+    "spring",
+    "data",
+    "react",
+    "rest"
+  ],
+  "author": "Brian Sam-Bodden",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/redis-developer/redis-om-autocomplete-demo/issues"
+  },
+  "homepage": "https://github.com/redis-developer/redis-om-autocomplete-demo#readme",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-autosuggest": "10.1.0",
+    "bootstrap": "^5.2.0",
+    "react-bootstrap": "^2.5.0",
+    "bootstrap-scss": "^5.2.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.18.10",
+    "@babel/preset-env": "^7.18.10",
+    "@babel/preset-react": "^7.18.6",
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/plugin-transform-runtime": "^7.18.10",
+    "babel-loader": "^8.2.5",
+    "css-loader": "^6.7.1",
+    "sass": "^1.54.4",
+    "sass-loader": "^13.0.2",
+    "mini-css-extract-plugin": "^2.6.1",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0"
+  }
+}

@@ -1,0 +1,10 @@
+/**
+ * SCSS and CSS imports for generating vendor.css
+ *
+ * - Any imports here and resolved by `app/src/main/webapp/root/webpack/webpack.config.js`
+ * - `~` In `@imports` statements means the import is to be resolved by webpack
+ */
+
+@import "~bootstrap/scss/bootstrap.scss"
+
+
