@@ -1,24 +1,23 @@
-import React, { useState } from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
+import {createRoot} from 'react-dom/client';
 import Alert from 'react-bootstrap/Alert';
 import Autosuggest from 'react-autosuggest';
 import AirportsAPI from './services/airports_api';
 
 async function getSuggestions(value) {
-  let suggestions = await AirportsAPI.getSuggestions(value);
-  return suggestions;
+  return await AirportsAPI.getSuggestions(value);
 }
 
 function getSuggestionValue(suggestion) {
-  return suggestion.string;
+  return suggestion.value;
 }
 
 function renderSuggestion(suggestion) {
-  let payload = JSON.parse(suggestion.payload);
+  let payload = suggestion.payload;
 
   return (
     <div className='suggestion-content '>
-      <div className='react-autosuggest__section-title'><strong>{suggestion.string}</strong></div>
+      <div className='react-autosuggest__section-title'><strong>{suggestion.value}</strong></div>
       <div>
         <span><strong>{payload.code}</strong> - {payload.state}</span>
       </div>
@@ -27,8 +26,8 @@ function renderSuggestion(suggestion) {
 }
 
 class App extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
 
     this.state = {
       value: '',
@@ -62,7 +61,7 @@ class App extends React.Component {
   };
 
   onSuggestionSelected = (event, { suggestion }) => {
-    let payload = JSON.parse(suggestion.payload);
+    let payload = suggestion.payload;
     this.setState({
       selected: `${payload.code} (${payload.state})`,
       showSelection: true
@@ -95,7 +94,6 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('react')
-);
+const container = document.getElementById('react');
+const root = createRoot(container);
+root.render(<App />);
